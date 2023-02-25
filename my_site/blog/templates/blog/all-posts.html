@@ -10,4 +10,12 @@
 {% endblock %}
 
 {% block content %}
+<section id ="all-posts">
+    <h2>My Collected Posts</h2>
+
+    <ul>
+        <li>
+            {% includes "blog/includes/post.html" %}
+        </li>
+    </ul>
 {% endblock %}
