@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 
 {% block title %}
@@ -6,7 +7,7 @@
 {% endblock%}
 
 {% block css_files %}
-    <link rel="stylesheet" href="{% static "blog/index.css" %}">
+    <link rel="stylesheet" href="{% static "blog/all-posts.css" %}">
 {% endblock %}
 
 {% block content %}
@@ -15,7 +16,12 @@
 
     <ul>
         <li>
-            {% includes "blog/includes/post.html" %}
+            {% include "blog/includes/post.html" %}
+            {% include "blog/includes/post.html" %}
+            {% include "blog/includes/post.html" %}
+            {% include "blog/includes/post.html" %}
+            {% include "blog/includes/post.html" %}
+            {% include "blog/includes/post.html" %}
         </li>
     </ul>
 {% endblock %}
