@@ -8,7 +8,7 @@ all_posts = [
         "author": "Luke",
         "date": date(2023, 3, 14),
         "title": "Mountain Hiking",
-        "excerpt": "There's nothing like the views you get when hiking in the mountains! And I wasn't even prepared for what happened whilst I was enjoying the view!",
+        "excerpt": "There's nothing like the views you get when hiking in the mountains!",
         "content": """
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis nobis
           aperiam est praesentium, quos iste consequuntur omnis exercitationem quam
@@ -70,7 +70,7 @@ all_posts = [
 def get_date(post):
     return post["date"]
 
-# Create your views here.
+
 
 def starting_page(request):
     sorted_posts = sorted(all_posts, key=get_date)
@@ -80,7 +80,9 @@ def starting_page(request):
     })
 
 def posts(request):
-    return render(request, "blog/all-posts.html")
+    return render(request, "blog/all-posts.html", {
+        "all_posts": all_posts
+    })
 
 def post_detail(request, slug):
     return render(request, "blog/post-detail.html")
