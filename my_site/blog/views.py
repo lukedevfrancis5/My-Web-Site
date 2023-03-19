@@ -3,7 +3,7 @@ from datetime import date
 
 all_posts = [
     {
-        "slug": "hike-in-the-mountains",
+        "slug": "the-mountains",
         "image": "mountains.png",
         "author": "Luke",
         "date": date(2023, 3, 14),
@@ -85,7 +85,7 @@ def posts(request):
     })
 
 def post_detail(request, slug):
-    identified_post = next(post for post in all_posts if post["slug"] == slug)
+    identified_post = next(post for post in all_posts if post['slug'] == slug)
     return render(request, "blog/post-detail.html", {
         "post": identified_post
     })
